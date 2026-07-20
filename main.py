@@ -31,24 +31,37 @@ videos
 def main():
 
     # assig_folder = openFolder()
-
-    return
+    assig_folder = openFolder()
+    # while loop, get checker to do checking and store in mover for each file
+    while True:
+        if checker() == 0:
+            break(0)
+        else:
+            currentFile = checker()
+            mover(currentFile)
+    close(assig_folder)
 
 def openFolder():
     # Take user input
+    chosenFolder = input("What is your chosen folder: ")
     # Open folder
+    open(chosenFolder)
     # return that the folder has opened and are entered
-    return 
+    return chosenFolder
 
 def checker(): 
     """ Could be a class """
     # Check each file and return it
+    # If there is no file left to read, then create and put in
     return
 
 def mover(currentFile):
     
     # check extension
     # if extension folder exists (list 1)
+        # Yes, add to folder
+    # else create then 
+        # add to folder
 
 
 if __name__ == '__main__' :
