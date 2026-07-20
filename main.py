@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 # Func - Open host folder, let user choose folder
 # Func - check each files, one by one
 # Func file exten, activate func for extension
@@ -33,12 +34,7 @@ def main():
     # assig_folder = openFolder()
     assig_folder = openFolder()
     # while loop, get checker to do checking and store in mover for each file
-    while True:
-        if checker() == 0:
-            break(0)
-        else:
-            currentFile = checker()
-            mover(currentFile)
+    checker()
     close(assig_folder)
 
 def openFolder():
@@ -49,15 +45,20 @@ def openFolder():
     # return that the folder has opened and are entered
     return chosenFolder
 
-def checker(): 
-    """ Could be a class """
-    # Check each file and return it
-    # If there is no file left to read, then create and put in
+def checker(chosenFolder): 
+    # Check each file and return i
+    folder_path = Path(chosenFolder)
+    for file in folder_path.iterdir():
+        if file.is_file():
+            sorter(file)
+        else:
+            return # Completed sorting
     return
 
-def mover(currentFile):
+def sorter(currentFile):
     
     # check extension
+        # Convert t
     # if extension folder exists (list 1)
         # Yes, add to folder
     # else create then 
