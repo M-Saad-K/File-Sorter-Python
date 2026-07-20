@@ -5,6 +5,8 @@ import sys
 # Func - If folder for _____, if they don't exist, take file as 
 # Func move given file into folder
 """
+List 1:
+
 images
 .png
 .jpg
@@ -36,8 +38,17 @@ def openFolder():
     # Take user input
     # Open folder
     # return that the folder has opened and are entered
+    return 
 
-def 
+def checker(): 
+    """ Could be a class """
+    # Check each file and return it
+    return
+
+def mover(currentFile):
+    
+    # check extension
+    # if extension folder exists (list 1)
 
 
 if __name__ == '__main__' :
