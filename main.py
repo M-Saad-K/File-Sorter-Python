@@ -39,11 +39,17 @@ def main():
 
 def openFolder():
     # Take user input
-    chosenFolder = input("What is your chosen folder: ")
-    # Open folder
-    open(chosenFolder)
-    # return that the folder has opened and are entered
-    return chosenFolder
+    chosenFolder = input("What is your chosen folder, must have a unique name: ")
+    
+    # We need to find the path of the chosen folder
+    try:
+        for i in os.walk(Path.home, topdown=False):   # Goes from home directory                                       
+          if i[0].split('/')[-1] == chosenFolder: # If found
+            return chosenFolder
+    except FileNotFoundError as e:
+        print(f"{chosenFolder} was not found, with error: {e}")
+            
+        
 
 def checker(chosenFolder): 
     # Check each file and return i
@@ -72,6 +78,9 @@ def sorter(currentFile, root):
           if i[0].split('/')[-1] == "images": # If found
             shutil.move(currentFile, i) # This will move it to the destination folder
         
+        # TODO: NEED TO ADD ELSE!
+
+
     def documents():
         # If folder exists, move to folder
         # else create and then move
