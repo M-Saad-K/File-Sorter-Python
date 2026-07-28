@@ -50,12 +50,12 @@ def checker(chosenFolder):
     folder_path = Path(chosenFolder)
     for file in folder_path.iterdir():
         if file.is_file():
-            sorter(file)
+            sorter(file, chosenFolder)
         else:
             print("Sorting completed")
             return # Completed sorting
 
-def sorter(currentFile):
+def sorter(currentFile, root):
     
     # check extension
     file_ext = currentFile.suffix
@@ -67,8 +67,12 @@ def sorter(currentFile):
 
     def images():
         # If folder exists, move to folder
-        # else create and then move
-        return
+        # else create and then move                                                    
+        for i in os.walk(root, topdown=False):                                         
+          if i[0].split('/')[-1] == "images": # If found
+                                                    
+            
+        
     def documents():
         # If folder exists, move to folder
         # else create and then move
