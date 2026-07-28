@@ -58,6 +58,7 @@ def checker(chosenFolder):
 def sorter(currentFile):
     
     # check extension
+    file_ext = currentFile.suffix
         # Convert t
     # if extension folder exists (list 1)
         # Yes, add to folder
