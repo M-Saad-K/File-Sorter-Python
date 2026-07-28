@@ -1,5 +1,7 @@
 import sys
 from pathlib import Path
+import os
+import shutil
 # Func - Open host folder, let user choose folder
 # Func - check each files, one by one
 # Func file exten, activate func for extension
@@ -31,9 +33,7 @@ videos
 
 def main():
 
-    # assig_folder = openFolder()
     assig_folder = openFolder()
-    # while loop, get checker to do checking and store in mover for each file
     checker(assig_folder)
     close(assig_folder)
 
@@ -52,8 +52,8 @@ def checker(chosenFolder):
         if file.is_file():
             sorter(file)
         else:
+            print("Sorting completed")
             return # Completed sorting
-    return
 
 def sorter(currentFile):
     
