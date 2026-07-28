@@ -64,25 +64,6 @@ def sorter(currentFile):
         # Yes, add to folder
     # else create then 
         # add to folder
-    """
-        images
-        .png
-        .jpg
-        .webp
-
-        documents
-        .pdf
-        .docx
-        .txt
-
-        coding
-        .py
-        .java
-        .c
-
-        videos
-        .mp4
-        .mp3"""
 
     def images():
         # If folder exists, move to folder
@@ -120,7 +101,9 @@ def sorter(currentFile):
         # videos
         ".mp3": videos(),
         ".mp4": videos()
-
     }
+    
+    switcher.get(file_ext, lambda = "extension could'nt be mapped")()
+    
 if __name__ == '__main__' :
     main() 
