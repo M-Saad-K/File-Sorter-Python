@@ -103,7 +103,7 @@ def sorter(currentFile):
         ".mp4": videos()
     }
     
-    switcher.get(file_ext, lambda = "extension could'nt be mapped")()
-    
+    switcher.get(file_ext, lambda:  f"{currentFile} could'nt be mapped")()
+
 if __name__ == '__main__' :
     main() 
