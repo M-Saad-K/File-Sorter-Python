@@ -100,5 +100,28 @@ def sorter(currentFile):
         # If folder exists, move to folder
         # else create and then move
         return
+
+    switcher = {
+        # images
+        ".png": images(),
+        ".jpg": images(),
+        ".webp": images(),
+
+        # documents
+        ".pdf": documents(),
+        ".docx": documents(),
+        ".txt": documents(),
+
+        # coding
+        "":,
+        "":,
+        "":,
+        
+        # videos
+        "":,
+        "":,
+        "":
+
+    }
 if __name__ == '__main__' :
     main() 
