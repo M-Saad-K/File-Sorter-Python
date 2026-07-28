@@ -64,7 +64,41 @@ def sorter(currentFile):
         # Yes, add to folder
     # else create then 
         # add to folder
-    return
+    """
+        images
+        .png
+        .jpg
+        .webp
 
+        documents
+        .pdf
+        .docx
+        .txt
+
+        coding
+        .py
+        .java
+        .c
+
+        videos
+        .mp4
+        .mp3"""
+
+    def images():
+        # If folder exists, move to folder
+        # else create and then move
+        return
+    def documents():
+        # If folder exists, move to folder
+        # else create and then move
+        return 
+    def coding():
+        # If folder exists, move to folder
+        # else create and then move
+        return
+    def videos():
+        # If folder exists, move to folder
+        # else create and then move
+        return
 if __name__ == '__main__' :
     main() 
