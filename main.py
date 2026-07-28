@@ -63,7 +63,7 @@ def sorter(currentFile):
         # Yes, add to folder
     # else create then 
         # add to folder
-
+    return
 
 if __name__ == '__main__' :
     main() 
