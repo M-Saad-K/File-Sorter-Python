@@ -61,6 +61,7 @@ def checker(chosenFolder):
     folder_path = Path(chosenFolder)
     for file in folder_path.iterdir():
         if file.is_file():
+            print(file)
             sorter(file, chosenFolder)
         else:
             print("Sorting completed")
@@ -70,6 +71,7 @@ def sorter(currentFile, root):
     
     # check extension
     file_ext = currentFile.suffix
+    print(file_ext)
         # Convert t
     # if extension folder exists (list 1)
         # Yes, add to folder
