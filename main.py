@@ -75,15 +75,21 @@ def sorter(currentFile, root):
     def documents():
         # If folder exists, move to folder
         # else create and then move
-        return 
+        for i in os.walk(root, topdown=False):                                         
+          if i[0].split('/')[-1] == "images": # If found
+            shutil.move(currentFile, i) # This will move it to the destination folder
     def coding():
         # If folder exists, move to folder
         # else create and then move
-        return
+        for i in os.walk(root, topdown=False):                                         
+          if i[0].split('/')[-1] == "images": # If found
+            shutil.move(currentFile, i) # This will move it to the destination folder
     def videos():
         # If folder exists, move to folder
         # else create and then move
-        return
+        for i in os.walk(root, topdown=False):                                         
+          if i[0].split('/')[-1] == "images": # If found
+            shutil.move(currentFile, i) # This will move it to the destination folder
 
     switcher = {
         # images
