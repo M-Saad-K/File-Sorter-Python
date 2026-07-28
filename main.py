@@ -46,11 +46,12 @@ def openFolder():
     # We need to find the path of the chosen folder
     try:
         # DEBUG
-        for i in os.walk(Path.home, topdown=False):   # Goes from home directory   
+        print("checking try")
+        for root, dirs, files in os.walk(Path.home(), topdown=False):   # Goes from home directory   
           # DEBUG
           print(Path.home)                                    
-          if i[0].split('/')[-1] == chosenFolder: # If found
-            return chosenFolder
+          if root.split('/')[-1] == chosenFolder: # If found
+            return root # returning full path
 
     except FileNotFoundError as e:
         print(f"{chosenFolder} was not found, with error: {e}")
