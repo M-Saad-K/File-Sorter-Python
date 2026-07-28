@@ -113,14 +113,13 @@ def sorter(currentFile):
         ".txt": documents(),
 
         # coding
-        "":,
-        "":,
-        "":,
+        ".py": coding(),
+        ".java": coding(),
+        ".c": coding(),
         
         # videos
-        "":,
-        "":,
-        "":
+        ".mp3": videos(),
+        ".mp4": videos()
 
     }
 if __name__ == '__main__' :
