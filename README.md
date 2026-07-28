@@ -1,2 +1,4 @@
 # File-Sorter-Python
-This is a simple file to folder sorter for Desktop, made in Python
+## Overall Description
+This is a simple file to folder sorter for Linux Desktop, made in Python
+The systems 
