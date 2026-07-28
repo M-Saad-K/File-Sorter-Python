@@ -46,7 +46,9 @@ def openFolder():
         for root, dirs, files in os.walk(Path.home(), topdown=False):   # Goes from home directory                                     
           if root.split('/')[-1] == chosenFolder: # If found
             print(root)
-            return root # returning full path
+            return root # returning full path 
+
+        raise FileNotFoundError("Folder not found") # IMPORTANT: Raise an exception before excepting it
 
     except FileNotFoundError as e:
         print(f"{chosenFolder} was not found, with error: {e}")
