@@ -40,14 +40,21 @@ def main():
 def openFolder():
     # Take user input
     chosenFolder = input("What is your chosen folder, must have a unique name: ")
+    # DEBUG
+    print(chosenFolder)
     
     # We need to find the path of the chosen folder
     try:
-        for i in os.walk(Path.home, topdown=False):   # Goes from home directory                                       
+        # DEBUG
+        for i in os.walk(Path.home, topdown=False):   # Goes from home directory   
+          # DEBUG
+          print(Path.home)                                    
           if i[0].split('/')[-1] == chosenFolder: # If found
             return chosenFolder
+
     except FileNotFoundError as e:
         print(f"{chosenFolder} was not found, with error: {e}")
+        exit()
             
         
 
