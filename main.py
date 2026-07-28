@@ -70,8 +70,7 @@ def sorter(currentFile, root):
         # else create and then move                                                    
         for i in os.walk(root, topdown=False):                                         
           if i[0].split('/')[-1] == "images": # If found
-                                                    
-            
+            shutil.move(currentFile, i) # This will move it to the destination folder
         
     def documents():
         # If folder exists, move to folder
