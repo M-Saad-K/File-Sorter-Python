@@ -34,7 +34,7 @@ def main():
     # assig_folder = openFolder()
     assig_folder = openFolder()
     # while loop, get checker to do checking and store in mover for each file
-    checker()
+    checker(assig_folder)
     close(assig_folder)
 
 def openFolder():
