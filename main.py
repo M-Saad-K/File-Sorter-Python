@@ -62,7 +62,7 @@ def checker(chosenFolder):
         if os.path.isdir(file):
           pass # skip
 
-        elif file.is_folder():
+        elif file.is_file():
             print(file)
             sorter(file, chosenFolder)
 
