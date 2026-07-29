@@ -74,7 +74,7 @@ def move_to_category(currentFile, root, category: str):
 
   newpath = root + "/" + category
   newpath.mkdir(exist_ok=True)  # creates it if missing, does nothing if it already exists
-  shutil.move(str(currentFile), str(target_dir / currentFile.name)
+  shutil.move(current, newpath)
 
 """
   for i in os.walk(root, topdown=False):
