@@ -65,12 +65,18 @@ def checker(chosenFolder):
         elif file.is_folder():
             print(file)
             sorter(file, chosenFolder)
-            
+
         else:
             print("Sorting completed")
             return # Completed sorting
 
 def move_to_category(currentFile, root, category: str):
+
+  newpath = root + "/" + category
+  newpath.mkdir(exist_ok=True)  # creates it if missing, does nothing if it already exists
+  shutil.move(str(currentFile), str(target_dir / currentFile.name)
+
+"""
   for i in os.walk(root, topdown=False):
           print("Plus something ", i)     
             # TODO: This needs fixing                                       
@@ -79,13 +85,12 @@ def move_to_category(currentFile, root, category: str):
           else:
             newpath = root + "/" + category
             os.makedirs(newpath)
-            shutil.move(currentFile, newpath) # This is work
+            shutil.move(currentFile, newpath) # This is work"""
 
 def sorter(currentFile, root):
     
     # check extension
     file_ext = currentFile.suffix
-    print(type(file_ext))
         # Convert t
     # if extension folder exists (list 1)
         # Yes, add to folder
@@ -94,41 +99,23 @@ def sorter(currentFile, root):
     def images():   
         # If folder exists, move to folder
         # else create and then move
-        category : str = images
-        move_to_category(currentFile, root, category)
+        move_to_category(currentFile, root, "images")
 
     def documents():
         # DEBUG:
         # If folder exists, move to folder
         # else create and then move
-        for i in os.walk(root, topdown=False):
-          print("Plus something ", i)     
-            # TODO: This needs fixing                                       
-          if i[0].split('/')[-1] == "documents": # If found
-            shutil.move(currentFile, i[0]) # This will move it to the destination folder
-          else:
-            newpath = root + "/documents"
-            os.makedirs(newpath)
-            shutil.move(currentFile, newpath) # This is work
+        move_to_category(currentFile, root, "documents")
 
     def coding():
         # If folder exists, move to folder
         # else create and then move
-        for i in os.walk(root, topdown=False):                                         
-          if i[0].split('/')[-1] == "images": # If found
-            shutil.move(currentFile, i) # This will move it to the destination folder
-          else:
-            # DEBUG
-            print("coding was called")
+        move_to_category(currentFile, root, "coding")
+
     def videos():
         # If folder exists, move to folder
         # else create and then move
-        for i in os.walk(root, topdown=False):                                         
-          if i[0].split('/')[-1] == "images": # If found
-            shutil.move(currentFile, i) # This will move it to the destination folder
-          else:
-            # DEBUG
-            print("videos was called")
+        move_to_category(currentFile, root, "videos")
 
     switcher = {
         # images
