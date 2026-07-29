@@ -150,6 +150,7 @@ def sorter(currentFile, root):
     }
     
     switcher.get(file_ext, lambda:  f"{currentFile} could'nt be mapped")()
+    print(images.calls)
 
 if __name__ == '__main__' :
     main() 
