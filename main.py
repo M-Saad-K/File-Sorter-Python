@@ -81,6 +81,7 @@ def sorter(currentFile, root):
         for i in os.walk(root, topdown=False):  
             # TODO: This needs fixing                                       
           if i[0].split('/')[-1] == "images": # If found
+            print("It was found")
             shutil.move(currentFile, i) # This will move it to the destination folder
           else:
             newpath = root + "/images"
