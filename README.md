@@ -9,10 +9,7 @@ images               .png, .jpg, .webp
 
 documents            .pdf, .docx, .txt
 
-coding
-.py
-.java
-.c
+coding.py.java.c
 
 videos
 .mp4
