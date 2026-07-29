@@ -90,6 +90,8 @@ def sorter(currentFile, root):
 
 
     def documents():
+        # DEBUG:
+        print("Documents was called for a png")
         # If folder exists, move to folder
         # else create and then move
         for i in os.walk(root, topdown=False):                                         
