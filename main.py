@@ -91,7 +91,6 @@ def sorter(currentFile, root):
 
     def documents():
         # DEBUG:
-        print("Documents was called for a png")
         # If folder exists, move to folder
         # else create and then move
         for i in os.walk(root, topdown=False):                                         
@@ -121,26 +120,26 @@ def sorter(currentFile, root):
 
     switcher = {
         # images
-        ".png": images(),
-        ".jpg": images(),
-        ".webp": images(),
+        ".png": images,
+        ".jpg": images,
+        ".webp": images,
 
         # documents
-        ".pdf": documents(),
-        ".docx": documents(),
-        ".txt": documents(),
+        ".pdf": documents,
+        ".docx": documents,
+        ".txt": documents,
 
         # coding
-        ".py": coding(),
-        ".java": coding(),
-        ".c": coding(),
+        ".py": coding,
+        ".java": coding,
+        ".c": coding,
         
         # videos
-        ".mp3": videos(),
-        ".mp4": videos()
+        ".mp3": videos,
+        ".mp4": videos
     }
     
-    switcher.get(file_ext, lambda:  f"{currentFile} could'nt be mapped")
+    switcher.get(file_ext, lambda:  f"{currentFile} could'nt be mapped")()
 
 if __name__ == '__main__' :
     main() 
