@@ -30,15 +30,6 @@ videos
 .mp3
 
 """
-
-def counted(f):
-    def wrapped(*args, **kwargs):
-        wrapped.calls += 1
-        return f(*args, **kwargs)
-    wrapped.calls = 0
-    return wrapped
-
-
 def main():
 
     assig_folder = openFolder()
@@ -84,7 +75,6 @@ def sorter(currentFile, root):
         # Yes, add to folder
     # else create then 
         # add to folder
-    @counted
     def images():
         # If folder exists, move to folder
         # else create and then move                                                    
@@ -92,11 +82,9 @@ def sorter(currentFile, root):
           if i[0].split('/')[-1] == "images": # If found
             shutil.move(currentFile, i) # This will move it to the destination folder
           else:
-            # DEBUG
-            print("images was called")
-
-
-        # TODO: NEED TO ADD ELSE!
+            newpath = root + "/images"
+            os.makedirs(newpath)
+            shutil.move(currentFile, newpath)
 
 
     def documents():
@@ -150,7 +138,6 @@ def sorter(currentFile, root):
     }
     
     switcher.get(file_ext, lambda:  f"{currentFile} could'nt be mapped")()
-    print(images.calls)
 
 if __name__ == '__main__' :
     main() 
