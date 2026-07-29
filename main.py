@@ -75,16 +75,17 @@ def sorter(currentFile, root):
         # Yes, add to folder
     # else create then 
         # add to folder
-    def images():
+    def images():     
         # If folder exists, move to folder
         # else create and then move                                                    
-        for i in os.walk(root, topdown=False):                                         
+        for i in os.walk(root, topdown=False):  
+            # TODO: This needs fixing                                       
           if i[0].split('/')[-1] == "images": # If found
             shutil.move(currentFile, i) # This will move it to the destination folder
           else:
             newpath = root + "/images"
             os.makedirs(newpath)
-            shutil.move(currentFile, newpath)
+            shutil.move(currentFile, newpath) # This is work
 
 
     def documents():
