@@ -59,9 +59,13 @@ def checker(chosenFolder):
     # Check each file and return i
     folder_path = Path(chosenFolder)
     for file in folder_path.iterdir():
-        if file.is_file():
+        if os.path.isdir(file):
+          pass # skip
+
+        elif file.is_folder():
             print(file)
             sorter(file, chosenFolder)
+            
         else:
             print("Sorting completed")
             return # Completed sorting
@@ -76,7 +80,6 @@ def move_to_category(currentFile, root, category: str):
             newpath = root + "/" + category
             os.makedirs(newpath)
             shutil.move(currentFile, newpath) # This is work
-
 
 def sorter(currentFile, root):
     
