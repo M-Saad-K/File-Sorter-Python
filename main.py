@@ -35,7 +35,6 @@ def main():
 
     assig_folder = openFolder()
     checker(assig_folder)
-    close(assig_folder)
 
 def openFolder():
     # Take user input
@@ -71,7 +70,7 @@ def sorter(currentFile, root):
     
     # check extension
     file_ext = currentFile.suffix
-    print(file_ext)
+    print(type(file_ext))
         # Convert t
     # if extension folder exists (list 1)
         # Yes, add to folder
@@ -128,7 +127,7 @@ def sorter(currentFile, root):
         ".mp4": videos()
     }
     
-    switcher.get(str(file_ext), lambda:  f"{currentFile} could'nt be mapped")()
+    switcher.get(file_ext, lambda:  f"{currentFile} could'nt be mapped")
 
 if __name__ == '__main__' :
     main() 
