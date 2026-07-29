@@ -75,13 +75,16 @@ def sorter(currentFile, root):
         # Yes, add to folder
     # else create then 
         # add to folder
-    def images():     
+    def images():   
+        print(currentFile)  
         # If folder exists, move to folder
         # else create and then move                                                    
         for i in os.walk(root, topdown=False):  
+          print(currentFile)
             # TODO: This needs fixing                                       
           if i[0].split('/')[-1] == "images": # If found
             print("It was found")
+            print(i[0])
             shutil.move(currentFile, i) # This will move it to the destination folder
           else:
             newpath = root + "/images"
