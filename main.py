@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 import os
 import shutil
+from unicodedata import category
 # Func - Open host folder, let user choose folder
 # Func - check each files, one by one
 # Func file exten, activate func for extension
@@ -65,7 +66,16 @@ def checker(chosenFolder):
             print("Sorting completed")
             return # Completed sorting
 
-def move_to_category(currentFile, root, category):
+def move_to_category(currentFile, root, category: str):
+  for i in os.walk(root, topdown=False):
+          print("Plus something ", i)     
+            # TODO: This needs fixing                                       
+          if i[0].split('/')[-1] == category: # If found
+            shutil.move(currentFile, i[0]) # This will move it to the destination folder
+          else:
+            newpath = root + "/" + category
+            os.makedirs(newpath)
+            shutil.move(currentFile, newpath) # This is work
 
 
 def sorter(currentFile, root):
@@ -80,17 +90,9 @@ def sorter(currentFile, root):
         # add to folder
     def images():   
         # If folder exists, move to folder
-        # else create and then move                                                    
-        for i in os.walk(root, topdown=False):
-          print("Plus something ", i)     
-            # TODO: This needs fixing                                       
-          if i[0].split('/')[-1] == "images": # If found
-            shutil.move(currentFile, i[0]) # This will move it to the destination folder
-          else:
-            newpath = root + "/images"
-            os.makedirs(newpath)
-            shutil.move(currentFile, newpath) # This is work
-
+        # else create and then move
+        category : str = images
+        move_to_category(currentFile, root, category)
 
     def documents():
         # DEBUG:
