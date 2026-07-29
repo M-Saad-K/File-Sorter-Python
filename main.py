@@ -65,6 +65,9 @@ def checker(chosenFolder):
             print("Sorting completed")
             return # Completed sorting
 
+def move_to_category(currentFile, root, category):
+
+
 def sorter(currentFile, root):
     
     # check extension
@@ -78,7 +81,8 @@ def sorter(currentFile, root):
     def images():   
         # If folder exists, move to folder
         # else create and then move                                                    
-        for i in os.walk(root, topdown=False):  
+        for i in os.walk(root, topdown=False):
+          print("Plus something ", i)     
             # TODO: This needs fixing                                       
           if i[0].split('/')[-1] == "images": # If found
             shutil.move(currentFile, i[0]) # This will move it to the destination folder
@@ -92,12 +96,16 @@ def sorter(currentFile, root):
         # DEBUG:
         # If folder exists, move to folder
         # else create and then move
-        for i in os.walk(root, topdown=False):                                         
-          if i[0].split('/')[-1] == "images": # If found
-            shutil.move(currentFile, i) # This will move it to the destination folder
+        for i in os.walk(root, topdown=False):
+          print("Plus something ", i)     
+            # TODO: This needs fixing                                       
+          if i[0].split('/')[-1] == "documents": # If found
+            shutil.move(currentFile, i[0]) # This will move it to the destination folder
           else:
-            # DEBUG
-            print("documents was called")
+            newpath = root + "/documents"
+            os.makedirs(newpath)
+            shutil.move(currentFile, newpath) # This is work
+
     def coding():
         # If folder exists, move to folder
         # else create and then move
@@ -125,7 +133,7 @@ def sorter(currentFile, root):
 
         # documents
         ".pdf": documents,
-        ".docx": documents,
+        ".odt": documents,
         ".txt": documents,
 
         # coding
