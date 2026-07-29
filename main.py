@@ -128,7 +128,7 @@ def sorter(currentFile, root):
         ".mp4": videos()
     }
     
-    switcher.get(file_ext, lambda:  f"{currentFile} could'nt be mapped")()
+    switcher.get(str(file_ext), lambda:  f"{currentFile} could'nt be mapped")()
 
 if __name__ == '__main__' :
     main() 
