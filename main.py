@@ -31,6 +31,14 @@ videos
 
 """
 
+def counted(f):
+    def wrapped(*args, **kwargs):
+        wrapped.calls += 1
+        return f(*args, **kwargs)
+    wrapped.calls = 0
+    return wrapped
+
+
 def main():
 
     assig_folder = openFolder()
@@ -76,7 +84,7 @@ def sorter(currentFile, root):
         # Yes, add to folder
     # else create then 
         # add to folder
-
+    @counted
     def images():
         # If folder exists, move to folder
         # else create and then move                                                    
@@ -86,6 +94,8 @@ def sorter(currentFile, root):
           else:
             # DEBUG
             print("images was called")
+
+
         # TODO: NEED TO ADD ELSE!
 
 
