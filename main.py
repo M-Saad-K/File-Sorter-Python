@@ -72,6 +72,8 @@ def checker(chosenFolder):
 
 def move_to_category(currentFile, root, category: str):
 
+  print("I am called")
+  print(currentFile)
   newpath = root + "/" + category
   Path(newpath).mkdir(exist_ok=True)  # creates it if missing, does nothing if it already exists
   shutil.move(currentFile, newpath)
