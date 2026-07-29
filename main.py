@@ -83,7 +83,9 @@ def sorter(currentFile, root):
         for i in os.walk(root, topdown=False):                                         
           if i[0].split('/')[-1] == "images": # If found
             shutil.move(currentFile, i) # This will move it to the destination folder
-        
+          else:
+            # DEBUG
+            print("images was called")
         # TODO: NEED TO ADD ELSE!
 
 
@@ -93,6 +95,9 @@ def sorter(currentFile, root):
         for i in os.walk(root, topdown=False):                                         
           if i[0].split('/')[-1] == "images": # If found
             shutil.move(currentFile, i) # This will move it to the destination folder
+          else:
+            # DEBUG
+            print("documents was called")
     def coding():
         # If folder exists, move to folder
         # else create and then move
