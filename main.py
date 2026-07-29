@@ -104,12 +104,18 @@ def sorter(currentFile, root):
         for i in os.walk(root, topdown=False):                                         
           if i[0].split('/')[-1] == "images": # If found
             shutil.move(currentFile, i) # This will move it to the destination folder
+          else:
+            # DEBUG
+            print("coding was called")
     def videos():
         # If folder exists, move to folder
         # else create and then move
         for i in os.walk(root, topdown=False):                                         
           if i[0].split('/')[-1] == "images": # If found
             shutil.move(currentFile, i) # This will move it to the destination folder
+          else:
+            # DEBUG
+            print("videos was called")
 
     switcher = {
         # images
