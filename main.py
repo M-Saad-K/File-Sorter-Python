@@ -122,6 +122,7 @@ def sorter(currentFile, root):
 
         move_to_category(currentFile, root, "videos")
 
+    # Anything not covered in the above
     def others():
 
         move_to_category(currentFile, root, "others")
