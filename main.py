@@ -115,6 +115,8 @@ def sorter(currentFile, root):
 
         move_to_category(currentFile, root, "others")
 
+    # This dict is used to relate each extension to a function
+    # The keys are the extension types and the values are the functions
     switcher = {
         # images
         ".png": images,
@@ -136,7 +138,7 @@ def sorter(currentFile, root):
         ".mp4": videos
     }
     
-    switcher.get(file_ext, lambda:  others())()
+    switcher.get(file_ext, lambda:  others())() # Maps, if not mapable, others activated, the () activates the function
 
 if __name__ == '__main__' :
     main() 
