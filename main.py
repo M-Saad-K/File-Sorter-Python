@@ -104,11 +104,11 @@ def sorter(currentFile, root):
 
     #.pdf
     #.odt
-
+    #.txt
     def documents():
     
         move_to_category(currentFile, root, "documents")
-        
+
     def coding():
 
         move_to_category(currentFile, root, "coding")
