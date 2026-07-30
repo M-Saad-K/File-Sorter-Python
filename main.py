@@ -36,7 +36,6 @@ others
 Please check README for more details of operation.
 """
 
-
 import sys
 from pathlib import Path
 import os
@@ -46,25 +45,28 @@ from unicodedata import category
 # The main functions runs the operational sequence, its first asks for the user's chosen folder and the begins the checking process
 def main():
 
-    assig_folder = openFolder() # Open
-    checker(assig_folder)
+    assig_folder = openFolder() # Assigning the chosen folder's location
+    checker(assig_folder) # Passing that root into checker
 
+# Open folder takes the chosen folder and finds where it is located and returns the root, the folder name must be unique
 def openFolder():
     # Take user input
-    chosenFolder = input("What is your chosen folder, must have a unique name: ")
-    
-    # We need to find the path of the chosen folder
-    try:
-        for root, dirs, files in os.walk(Path.home(), topdown=False):   # Goes from home directory                                     
-          if root.split('/')[-1] == chosenFolder: # If found
-            print(root)
-            return root # returning full path 
+    while(True): # Loops until the user provides a credible folder
+        
+        chosenFolder = input("What is your chosen folder, must have a unique name: ")
+        # We need to find the path of the chosen folder
+        try:
+            for root, dirs, files in os.walk(Path.home(), topdown=False):   # Goes from home directory                                     
+                if root.split('/')[-1] == chosenFolder: # If found
+                    print(root)
+                    return root # returning full path 
 
-        raise FileNotFoundError("Folder not found") # IMPORTANT: Raise an exception before excepting it
+            raise FileNotFoundError("Folder not found") # IMPORTANT: Raise an exception before excepting it
 
-    except FileNotFoundError as e:
-        print(f"{chosenFolder} was not found, with error: {e}")
-        exit()
+        except FileNotFoundError as e:
+            print(f"{chosenFolder} was not found, with error: {e}") # Can't find it
+            continue # Return back to the top
+        
             
         
 
