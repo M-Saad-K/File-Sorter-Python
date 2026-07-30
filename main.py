@@ -140,5 +140,5 @@ def sorter(currentFile, root):
     
     switcher.get(file_ext, lambda:  others())() # Maps, if not mapable, others activated, the () activates the function
 
-if __name__ == '__main__' :
+if __name__ == '__main__' : # This ensures the main function is the only running function
     main() 
