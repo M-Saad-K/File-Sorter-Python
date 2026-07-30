@@ -111,6 +111,7 @@ def sorter(currentFile, root):
 
     #.c
     #.py
+    #.java
     def coding():
 
         move_to_category(currentFile, root, "coding")
