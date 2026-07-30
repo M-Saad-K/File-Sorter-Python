@@ -1,7 +1,39 @@
 """
+@ Author: Muhammad Saad Khan
+@ Completion Date: 30 / 07 / 2026
+@ Project Name: File-Sorter-Python
+@ File Name: main.py
+@ Version: Python.3.12.0
+
+Description:
+It is a simple file sorter that allows the user to select which unsorted folder they wish to sort.
+
+It sorts files into five different folders based on their extension:
+
+images
+.png
+.jpg
+.webp
+
+documents
+.pdf
+.docx
+.txt
+
+coding
+.py
+.java
+.c
+
+videos
+.mp4
+.mp3
+
+others
+. anything not covered from the above
 
 
-
+Please check README for more details of operation.
 """
 
 
