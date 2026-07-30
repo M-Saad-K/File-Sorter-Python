@@ -102,6 +102,8 @@ def sorter(currentFile, root):
 
         move_to_category(currentFile, root, "images")
 
+    #.pdf
+
     def documents():
     
         move_to_category(currentFile, root, "documents")
