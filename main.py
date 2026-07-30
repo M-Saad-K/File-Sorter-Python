@@ -95,6 +95,8 @@ def sorter(currentFile, root):
     # check extension
     file_ext = currentFile.suffix
 
+    #.png
+
     def images():   
 
         move_to_category(currentFile, root, "images")
