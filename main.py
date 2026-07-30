@@ -104,6 +104,10 @@ def sorter(currentFile, root):
         # else create and then move
         move_to_category(currentFile, root, "videos")
 
+    def others():
+
+        move_to_category(currentFile, root, "others")
+
     switcher = {
         # images
         ".png": images,
@@ -125,7 +129,7 @@ def sorter(currentFile, root):
         ".mp4": videos
     }
     
-    switcher.get(file_ext, lambda:  f"{currentFile} could'nt be mapped")()
+    switcher.get(file_ext, lambda:  others)()
 
 if __name__ == '__main__' :
     main() 
