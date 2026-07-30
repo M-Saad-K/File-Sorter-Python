@@ -97,7 +97,7 @@ def sorter(currentFile, root):
 
     #.png
     #.jpg
-    
+    #.webp
     def images():   
 
         move_to_category(currentFile, root, "images")
