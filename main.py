@@ -42,37 +42,11 @@ from pathlib import Path
 import os
 import shutil
 from unicodedata import category
-# Func - Open host folder, let user choose folder
-# Func - check each files, one by one
-# Func file exten, activate func for extension
-# Func - If folder for _____, if they don't exist, take file as 
-# Func move given file into folder
-"""
-List 1:
 
-images
-.png
-.jpg
-.webp
-
-documents
-.pdf
-.docx
-.txt
-
-coding
-.py
-.java
-.c
-
-videos
-.mp4
-.mp3
-
-"""
+# The main functions runs the operational sequence, its first asks for the user's chosen folder and the begins the checking process
 def main():
 
-    assig_folder = openFolder()
+    assig_folder = openFolder() # Open
     checker(assig_folder)
 
 def openFolder():
