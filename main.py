@@ -52,7 +52,7 @@ def main():
 def openFolder():
     # Take user input
     while(True): # Loops until the user provides a credible folder
-        
+
         chosenFolder = input("What is your chosen folder, must have a unique name: ")
         # We need to find the path of the chosen folder
         try:
@@ -66,22 +66,22 @@ def openFolder():
         except FileNotFoundError as e:
             print(f"{chosenFolder} was not found, with error: {e}") # Can't find it
             continue # Return back to the top
-        
-            
-        
-
+                
+# Checker is the one who checkes each object in the root folder, skipping subfoldering and checking for files. If it doesn't find any files, sorting done
+# If it does, it activates sorter for that file
+# It does this for every file
 def checker(chosenFolder): 
     # Check each file and return i
     folder_path = Path(chosenFolder)
     for file in folder_path.iterdir():
-
         if file.is_file():
             print(file)
-            sorter(file, chosenFolder)
+            sorter(file, chosenFolder) # Activate sorter on that file
         
     print("Sorting completed")
     return # Completed sorting
 
+# Move category, is used by sorter to create respective folders for files to move into
 def move_to_category(currentFile, root, category: str):
 
   print(currentFile)
