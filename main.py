@@ -85,38 +85,30 @@ def checker(chosenFolder):
 def move_to_category(currentFile, root, category: str):
 
   print(currentFile)
-  newpath = root + "/" + category
+  newpath = root + "/" + category # Creates the new path of the folder
   Path(newpath).mkdir(exist_ok=True)  # creates it if missing, does nothing if it already exists
-  shutil.move(currentFile, newpath)
+  shutil.move(currentFile, newpath) # moves into folders
 
+# Sorter is the one who sorts the file into its respective folder by checking its extension
 def sorter(currentFile, root):
     
     # check extension
     file_ext = currentFile.suffix
-        # Convert t
-    # if extension folder exists (list 1)
-        # Yes, add to folder
-    # else create then 
-        # add to folder
+
     def images():   
-        # If folder exists, move to folder
-        # else create and then move
+
         move_to_category(currentFile, root, "images")
 
     def documents():
-        # DEBUG:
-        # If folder exists, move to folder
-        # else create and then move
+    
         move_to_category(currentFile, root, "documents")
 
     def coding():
-        # If folder exists, move to folder
-        # else create and then move
+
         move_to_category(currentFile, root, "coding")
 
     def videos():
-        # If folder exists, move to folder
-        # else create and then move
+
         move_to_category(currentFile, root, "videos")
 
     def others():
