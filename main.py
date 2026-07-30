@@ -110,6 +110,7 @@ def sorter(currentFile, root):
         move_to_category(currentFile, root, "documents")
 
     #.c
+    #.py
     def coding():
 
         move_to_category(currentFile, root, "coding")
