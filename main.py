@@ -116,6 +116,8 @@ def sorter(currentFile, root):
 
         move_to_category(currentFile, root, "coding")
 
+    #.mp3
+    
     def videos():
 
         move_to_category(currentFile, root, "videos")
