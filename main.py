@@ -129,7 +129,7 @@ def sorter(currentFile, root):
         ".mp4": videos
     }
     
-    switcher.get(file_ext, lambda:  others)()
+    switcher.get(file_ext, lambda:  others())()
 
 if __name__ == '__main__' :
     main() 
